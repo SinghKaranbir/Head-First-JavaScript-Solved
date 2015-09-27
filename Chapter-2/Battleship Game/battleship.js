@@ -1,10 +1,10 @@
 /**
  * Created by karanbir on 27/09/15.
  */
-
-var location1 = 1;
-var location2 = 2;
-var location3 = 3;
+var randomLoc = Math.floor(Math.random()*5);
+var location1 = randomLoc;
+var location2 = location1 +1;
+var location3 = location2 +1;
 
 var hits = 0;
 var guesses = 0;
@@ -23,8 +23,12 @@ while(!isSunk) {
         guesses = guesses + 1;
 
         if (guess == location1 || guess == location2 || guess == location3) {
+            alert("Hit!");
             hits = hits + 1;
+        }else{
+            alert("Nice Try, but you Missed!!");
         }
+
         if (hits == 3) {
             isSunk = true;
             alert("You sank my battleship");
